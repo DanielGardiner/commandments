@@ -28,24 +28,27 @@ const CommandmentUl = styled(motion.div)`
 const CommandmentLi = styled(motion.div)`
   color: ${(p) => p.theme.textColor};
   margin-bottom: 20px;
+  &:first-child {
+    margin-top: 40px;
+  }
   &:last-child {
     margin-bottom: 0;
-    }
+  }
 `
 
 export default function Commandments() {
 
   const commandments = [
-    'Vel quam elementum pulvinar etiam',
-    'At lectus urna duis convallis',
-    'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt',
-    'Augue interdum velit euismod',
-    'Vel quam elementum pulvinar etiam',
-    'Augue interdum velit euismod',
-    'At lectus urna duis convallis',
-    'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt',
-    'Vel quam elementum pulvinar etiam',
-    'Augue interdum velit euismod',
+    'Thou shalt not work past 17:30.' ,
+    'Thou shalt not deploy after 16:00.' ,
+    'Thou shalt meme at least once a day.' ,
+    'Thou shalt play the deployment playlist for major deployment.' ,
+    'Thou shalt always make time for WOGA.' ,
+    'Thou shalt always use dark theme.' ,
+    'Thou shalt only eat cereal after sunset.' ,
+    'Thou shalt always French exit.' ,
+    'Thou shalt not age.' ,
+    'Thou shalt aim to get a bit wiser every day.' ,
   ]
 
   const commandmentVariants = {
@@ -88,10 +91,10 @@ export default function Commandments() {
           initial="initial"
           animate="animate"
         >
-          {commandments.map((item) => {
+          {commandments.map((item, i) => {
             return (
               <CommandmentLi variants={commandmentItemVariants}>
-                {item}
+                {i + 1}&nbsp; &nbsp;{item}
               </CommandmentLi>
             )
           })}
