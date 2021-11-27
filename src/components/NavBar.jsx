@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/logo.png'
 
@@ -37,6 +37,19 @@ const ButtonLeft = styled(Button)`
 `
 
 const LogoWrapper = styled.div`
+  position: relative;
+  &:before {
+    display: ${(p) => p.isEdDisapproving ? 'block' : 'none'};
+    color: red;
+    content: 'No...';
+    position: absolute;
+    left: -22px;
+    top: 45px;
+    background: white;
+    padding: 3px 5px;
+    border-radius: 4px;
+    border-top-right-radius: 30px;
+  }
 `
 
 const LogoImage = styled.img`
@@ -51,6 +64,16 @@ const LogoImage = styled.img`
 
 export default function Commandments() {
   const [isDarkTheme, setIsDarkTheme] = useState(true)
+  const [isEdDisapproving, setIsEdDisapproving] = useState(false);
+  const EdDisapprovingDuration = 1500;
+
+  useEffect(() => {
+    if (isDarkTheme) return
+    setIsEdDisapproving(true)
+    setTimeout(()=>{
+      setIsEdDisapproving(false)
+    }, EdDisapprovingDuration)
+  }, [isDarkTheme])
 
   return (
     <OuterContainer>
@@ -71,7 +94,7 @@ export default function Commandments() {
           </ButtonLeft>
         </ButtonWrapper>
 
-        <LogoWrapper>
+        <LogoWrapper isEdDisapproving={isEdDisapproving}>
           <LogoImage src={Logo} alt="" width={80} height={80} />
         </LogoWrapper>
 
