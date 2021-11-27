@@ -6,6 +6,7 @@ const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 100px;
+  background: black;
 `
 
 const InnerContainer = styled.div`
