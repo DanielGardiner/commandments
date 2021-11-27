@@ -5,6 +5,7 @@ import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
 import NavBar from "./components/NavBar";
 import Commandments from "./components/Commandments";
+import logo from "./assets/logo.png";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/png" href={logo} sizes="16x16" />
       </Helmet>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
