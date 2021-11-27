@@ -47,8 +47,8 @@ export default function Commandments() {
       y: 0,
       opacity: 1,
       transition: {
-        staggerChildren: 0.6,
-        delayChildren: 0.2
+        staggerChildren: 0.5,
+        delayChildren: 0.1
       }
     }
   }
