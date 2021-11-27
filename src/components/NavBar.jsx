@@ -44,7 +44,7 @@ const LogoImage = styled.img`
 
   &:hover {
     cursor: pointer;
-  }
+  } 
 `
 
 
