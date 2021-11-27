@@ -5,12 +5,16 @@ const OuterContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  margin-top: 100px;
   background: black;
+  padding: 15px 25px 30px 25px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px 5px #fff;
+
 `
 
 const InnerContainer = styled.div`
-  width: 60%;
+  /* width: 60%; */
 `
 
 const Title = styled.h1`

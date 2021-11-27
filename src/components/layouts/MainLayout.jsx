@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 // import theme from 'styles'
-import background from '../../assets/background.jpg'
+import background from '../../assets/background3.jpg'
 
 const OuterContainer = styled.div`
   width: 100%;
@@ -22,19 +22,25 @@ const BackgroundImageFade = styled.div`
   background: linear-gradient(to bottom right, #373B44, #73C8A9); 
 `
 
-const BackgroundImage = styled.img`
-  width: 100%;
+const BackgroundImageWrapper = styled.div`
+background: black;
+width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
-  /* opacity: 0.5; */
+  min-height: 100vh;
+`
+const BackgroundImage = styled.img`
+  width: 100%;
+  height: 100%;
 `
 
 export default function MainLayout({ children }) {
   return (
     <OuterContainer>
-      {/* <BackgroundImageFade /> */}
-      <BackgroundImage src={background} />
+      <BackgroundImageWrapper>
+        <BackgroundImage src={background} />
+      </BackgroundImageWrapper>
       <InnerContainer>
         {children}
       </InnerContainer>
