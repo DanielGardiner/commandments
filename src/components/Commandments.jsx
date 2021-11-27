@@ -26,6 +26,8 @@ const CommandmentUl = styled(motion.div)`
   
 `
 const CommandmentLi = styled(motion.div)`
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
   color: ${(p) => p.theme.textColor};
   margin-bottom: 20px;
   &:first-child {
