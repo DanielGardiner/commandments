@@ -65,7 +65,7 @@ const modalContainerVariants = {
 const modalVariants = {
   initial: {
     opacity: 0,
-    y: 300,
+    y: 200,
   },
   animateIn: {
     opacity: 1,
@@ -76,6 +76,7 @@ const modalVariants = {
   },
   animateOut: {
     opacity: 0,
+    y: 100,
     transition: {
       duration: 0.8
     }

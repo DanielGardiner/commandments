@@ -98,7 +98,6 @@ export default function Commandments({ setIsModalShowing }) {
         <LogoWrapper isEdDisapproving={isEdDisapproving} onClick={() => setIsModalShowing(true)}>
           <LogoImage src={Logo} alt="" width={80} height={80} />
         </LogoWrapper>
-
       </InnerContainer>
     </OuterContainer >
   );
