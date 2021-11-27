@@ -1,21 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const OuterContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-`
-
-const InnerContainer = styled.div`
-  background: black;
-  padding: 15px 30px 30px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px 5px #fff;
-  max-width: 750px;
-`
-
 const Title = styled.h1`
   margin-bottom: 30px;
   font-size: 40px;
@@ -41,16 +26,16 @@ const CommandmentLi = styled(motion.div)`
 export default function Commandments() {
 
   const commandments = [
-    'Thou shalt not work past 17:30.' ,
-    'Thou shalt not deploy after 16:00.' ,
-    'Thou shalt meme at least once a day.' ,
-    'Thou shalt play the deployment playlist for major deployment.' ,
-    'Thou shalt always make time for WOGA.' ,
-    'Thou shalt always use dark theme.' ,
-    'Thou shalt only eat cereal after sunset.' ,
-    'Thou shalt always French exit.' ,
-    'Thou shalt not age.' ,
-    'Thou shalt aim to get a bit wiser every day.' ,
+    'Thou shalt not work past 17:30.',
+    'Thou shalt not deploy after 16:00.',
+    'Thou shalt meme at least once a day.',
+    'Thou shalt play the deployment playlist for major deployment.',
+    'Thou shalt always make time for WOGA.',
+    'Thou shalt always use dark theme.',
+    'Thou shalt only eat cereal after sunset.',
+    'Thou shalt always French exit.',
+    'Thou shalt not age.',
+    'Thou shalt aim to get a bit wiser every day.',
   ]
 
   const commandmentVariants = {
@@ -84,24 +69,22 @@ export default function Commandments() {
 
 
   return (
-    <OuterContainer>
-      <InnerContainer>
-        <Title>
-          The 10 Ed Commandments
+    <>
+      <Title>
+        The 10 Ed Commandments
         </Title>
-        <CommandmentUl variants={commandmentVariants}
-          initial="initial"
-          animate="animate"
-        >
-          {commandments.map((item, i) => {
-            return (
-              <CommandmentLi variants={commandmentItemVariants}>
-                {i + 1}&nbsp; &nbsp;{item}
-              </CommandmentLi>
-            )
-          })}
-        </CommandmentUl>
-      </InnerContainer>
-    </OuterContainer>
+      <CommandmentUl variants={commandmentVariants}
+        initial="initial"
+        animate="animate"
+      >
+        {commandments.map((item, i) => {
+          return (
+            <CommandmentLi variants={commandmentItemVariants}>
+              {i + 1}&nbsp; &nbsp;{item}
+            </CommandmentLi>
+          )
+        })}
+      </CommandmentUl>
+    </>
   );
 }

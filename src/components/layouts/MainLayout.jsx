@@ -12,6 +12,7 @@ const OuterContainer = styled.div`
 `
 
 const InnerContainer = styled.div`
+  position: relative;
   max-width: ${(p) => p.theme.maxWidth};
   width: 100%;
   padding: 0 10px;

@@ -3,10 +3,12 @@ import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import useOnClickOutside from '../hooks/useOnClickOutside'
 
-const Background = styled.div`
+const Background = styled(motion.div)`
   position: absolute;
   background-color: grey;
-  opacity: 0.8;
+  opacity: ${(p) => p.isModalShowing ? 0.8 : 0};
+  visibility: ${(p) => p.isModalShowing ? 'visible' : 'hidden'};
+  transition: all 0.8s ease-in-out;
   z-index: 100;
   width: 100%;
   height: 100%;
@@ -49,7 +51,7 @@ const modalContainerVariants = {
     opacity: 0,
   },
   animateIn: {
-    opacity: 1,
+    opacity: 0.8,
     transition: {
       duration: 0.8
     }
@@ -89,38 +91,33 @@ function Modal({ isModalShowing, setIsModalShowing }) {
 
   return (
     <>
+      <Background
+        isModalShowing={isModalShowing}
+      />
       <AnimatePresence>
         {isModalShowing && (
-          <motion.div
-            variants={modalContainerVariants}
-            initial='initial'
-            animate={'animateIn'}
-            exit={'animateOut'}
-          >
-            <Background />
-            <OuterContainer>
-              <ModalBox
-                ref={modalRef}
-                setIsModalShowing={setIsModalShowing}
-                variants={modalVariants}
-                initial='initial'
-                animate={'animateIn'}
-                exit={'animateOut'}
-              >
-                <ModalClose onClick={() => setIsModalShowing(false)}>X</ModalClose>
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/hGlyFc79BUE?autoplay=1"
-                  // src="https://www.youtube.com/embed/hGlyFc79BUE"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
-              </ModalBox>
-            </OuterContainer>
-          </motion.div>
+          <OuterContainer>
+            <ModalBox
+              ref={modalRef}
+              setIsModalShowing={setIsModalShowing}
+              variants={modalVariants}
+              initial='initial'
+              animate={'animateIn'}
+              exit={'animateOut'}
+            >
+              <ModalClose onClick={() => setIsModalShowing(false)}>X</ModalClose>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/hGlyFc79BUE?autoplay=1"
+                // src="https://www.youtube.com/embed/hGlyFc79BUE"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </ModalBox>
+          </OuterContainer>
         )}
       </AnimatePresence>
     </>
