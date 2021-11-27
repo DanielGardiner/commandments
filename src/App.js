@@ -1,13 +1,18 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import styled, { ThemeProvider } from "styled-components";
+import { AnimatePresence } from "framer-motion";
 import MainLayout from "./components/layouts/MainLayout";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
 import NavBar from "./components/NavBar";
+import Modal from "./components/Modal";
 import Commandments from "./components/Commandments";
 import logo from "./assets/logo.png";
 
 function App() {
+  const [isModalShowing, setIsModalShowing] = useState(false);
+
   return (
     <>
       <Helmet>
@@ -23,8 +28,12 @@ function App() {
       </Helmet>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <Modal
+          isModalShowing={isModalShowing}
+          setIsModalShowing={setIsModalShowing}
+        />
         <MainLayout>
-          <NavBar />
+          <NavBar setIsModalShowing={setIsModalShowing} />
           <Commandments />
         </MainLayout>
       </ThemeProvider>

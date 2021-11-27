@@ -39,7 +39,8 @@ const ButtonLeft = styled(Button)`
 const LogoWrapper = styled.div`
   position: relative;
   &:before {
-    display: ${(p) => p.isEdDisapproving ? 'block' : 'none'};
+    opacity: ${(p) => p.isEdDisapproving ? 1 : 0};
+    transition: all 0.5s ease-in-out;
     color: red;
     content: 'No...';
     position: absolute;
@@ -62,7 +63,7 @@ const LogoImage = styled.img`
 
 
 
-export default function Commandments() {
+export default function Commandments({ setIsModalShowing }) {
   const [isDarkTheme, setIsDarkTheme] = useState(true)
   const [isEdDisapproving, setIsEdDisapproving] = useState(false);
   const EdDisapprovingDuration = 1500;
@@ -70,7 +71,7 @@ export default function Commandments() {
   useEffect(() => {
     if (isDarkTheme) return
     setIsEdDisapproving(true)
-    setTimeout(()=>{
+    setTimeout(() => {
       setIsEdDisapproving(false)
     }, EdDisapprovingDuration)
   }, [isDarkTheme])
@@ -94,11 +95,11 @@ export default function Commandments() {
           </ButtonLeft>
         </ButtonWrapper>
 
-        <LogoWrapper isEdDisapproving={isEdDisapproving}>
+        <LogoWrapper isEdDisapproving={isEdDisapproving} onClick={() => setIsModalShowing(true)}>
           <LogoImage src={Logo} alt="" width={80} height={80} />
         </LogoWrapper>
 
       </InnerContainer>
-    </OuterContainer>
+    </OuterContainer >
   );
 }
