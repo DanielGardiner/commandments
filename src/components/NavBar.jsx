@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import Logo from '../assets/logo.png'
 
@@ -36,8 +37,10 @@ const ButtonRight = styled(Button)`
 const ButtonLeft = styled(Button)`
 `
 
-const LogoWrapper = styled.div`
+const LogoWrapper = styled(motion.div)`
   position: relative;
+  transform: ${(p) => p.isEdDisapproving ? 'rotate(20deg)' : 'rotate(0)'};
+  transition: all 0.5s ease-in-out;
   &:before {
     opacity: ${(p) => p.isEdDisapproving ? 1 : 0};
     transition: all 0.5s ease-in-out;
@@ -61,12 +64,12 @@ const LogoImage = styled.img`
   } 
 `
 
-
-
 export default function Commandments({ setIsModalShowing }) {
   const [isDarkTheme, setIsDarkTheme] = useState(true)
   const [isEdDisapproving, setIsEdDisapproving] = useState(false);
   const EdDisapprovingDuration = 1500;
+
+
 
   useEffect(() => {
     if (isDarkTheme) return
@@ -95,7 +98,8 @@ export default function Commandments({ setIsModalShowing }) {
           </ButtonLeft>
         </ButtonWrapper>
 
-        <LogoWrapper isEdDisapproving={isEdDisapproving} onClick={() => setIsModalShowing(true)}>
+        <LogoWrapper
+          isEdDisapproving={isEdDisapproving} onClick={() => setIsModalShowing(true)}>
           <LogoImage src={Logo} alt="" width={80} height={80} />
         </LogoWrapper>
       </InnerContainer>

@@ -13,6 +13,11 @@ const OuterContainer = styled.div`
 
 const InnerContainer = styled.div`
   max-width: ${(p) => p.theme.maxWidth};
+  width: 100%;
+  padding: 0 10px;
+  @media (min-width: ${(p) => p.theme.breakpointMd}) {
+    padding: 0 50px;
+  }
 `
 const BackgroundImageFade = styled.div`
   width: 100%;
@@ -24,7 +29,7 @@ const BackgroundImageFade = styled.div`
 
 const BackgroundImageWrapper = styled.div`
 background: black;
-width: 100%;
+  width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;

@@ -5,20 +5,21 @@ const OuterContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  background: black;
-  padding: 15px 25px 30px 25px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px 5px #fff;
-
+  margin-top: 60px;
 `
 
 const InnerContainer = styled.div`
-  /* width: 60%; */
+  background: black;
+  padding: 15px 30px 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px 5px #fff;
+  max-width: 750px;
 `
 
 const Title = styled.h1`
-margin-bottom: 30px;
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
 `
 
 const CommandmentUl = styled(motion.div)`
@@ -38,6 +39,12 @@ export default function Commandments() {
     'Vel quam elementum pulvinar etiam',
     'At lectus urna duis convallis',
     'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt',
+    'Augue interdum velit euismod',
+    'Vel quam elementum pulvinar etiam',
+    'Augue interdum velit euismod',
+    'At lectus urna duis convallis',
+    'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt',
+    'Vel quam elementum pulvinar etiam',
     'Augue interdum velit euismod',
   ]
 
@@ -75,7 +82,7 @@ export default function Commandments() {
     <OuterContainer>
       <InnerContainer>
         <Title>
-          The 10 _ Commandments
+          The 10 Ed Commandments
         </Title>
         <CommandmentUl variants={commandmentVariants}
           initial="initial"
