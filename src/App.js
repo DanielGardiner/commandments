@@ -7,8 +7,10 @@ import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
 import NavBar from "./components/NavBar";
 import Modal from "./components/Modal";
+import MainContentCard from "./components/MainContentCard";
 import Commandments from "./components/Commandments";
 import Message from "./components/Message";
+import MessageToggle from "./components/MessageToggle";
 import logo from "./assets/logo.png";
 
 function App() {
@@ -38,8 +40,10 @@ function App() {
         />
         <MainLayout>
           <NavBar setIsModalShowing={setIsModalShowing} />
-          <Commandments />
-          <Message />
+          <MainContentCard>
+            {isMessageShowing ? <Message /> : <Commandments />}
+          </MainContentCard>
+          <MessageToggle isMessageShowing={isMessageShowing} setIsMessageShowing={setIsMessageShowing} />
         </MainLayout>
       </ThemeProvider>
     </>
