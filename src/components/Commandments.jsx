@@ -27,7 +27,7 @@ export default function Commandments() {
 
   const commandments = [
     'Thou shalt not work past 17:30.',
-    'Thou shalt not deploy after 16:00.',
+    'Thou shalt not deploy after 16:00 or on Friday.',
     'Thou shalt meme at least once a day.',
     'Thou shalt play the deployment playlist for major deployment.',
     'Thou shalt always make time for WOGA.',
