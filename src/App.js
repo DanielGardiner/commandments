@@ -24,13 +24,7 @@ function App() {
         <title>Ed Commandments</title>
         <link rel="icon" type="image/png" href={logo} sizes="16x16" />
 
-        {/* fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto+Mono:wght@300;500&display=swap"
-          rel="stylesheet"
-        />
+
       </Helmet>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
