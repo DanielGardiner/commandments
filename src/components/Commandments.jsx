@@ -8,7 +8,7 @@ const Title = styled.h1`
 `
 
 const CommandmentUl = styled(motion.div)`
-  
+  overflow-y: hidden;
 `
 const CommandmentLi = styled(motion.div)`
   font-family: 'Roboto Mono', monospace;
@@ -16,7 +16,7 @@ const CommandmentLi = styled(motion.div)`
   color: ${(p) => p.theme.textColor};
   margin-bottom: 20px;
   &:first-child {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   &:last-child {
     margin-bottom: 0;
