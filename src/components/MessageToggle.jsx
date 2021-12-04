@@ -14,7 +14,7 @@ const ImageWrapper = styled.div`
 function MessageToggle({ isMessageShowing, setIsMessageShowing }) {
   return (
     <ImageWrapper onClick={() => setIsMessageShowing(!isMessageShowing)}>
-      <img src={star} />
+      <img src={star} alt="star icon" />
     </ImageWrapper>
   )
 

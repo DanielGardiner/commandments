@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
-import styled, { ThemeProvider } from "styled-components";
-import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "styled-components";
 import MainLayout from "./components/layouts/MainLayout";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";

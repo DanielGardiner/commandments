@@ -46,24 +46,6 @@ const ModalClose = styled.div`
   }
 `
 
-const modalContainerVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animateIn: {
-    opacity: 0.8,
-    transition: {
-      duration: 0.8
-    }
-  },
-  animateOut: {
-    opacity: 0,
-    transition: {
-      duration: 0.8
-    }
-  },
-}
-
 const modalVariants = {
   initial: {
     opacity: 0,
