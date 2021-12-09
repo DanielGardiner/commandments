@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import sloth from '../assets/sloth.jpeg'
-
+import useHover from '../hooks/useHover'
 
 const Container = styled.div`
   display:flex;
@@ -15,9 +16,14 @@ const MessageText = styled.p`
 `
 
 
-const ImageWrapper = styled.div`
+const ImageOuterWrapper = styled.div`
 display: flex;
 justify-content:flex-end;
+`
+const ImageInnerWrapper = styled(motion.div)`
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 `
 
 const Image = styled.img`
@@ -27,16 +33,23 @@ const Image = styled.img`
 `
 
 function Message() {
+  const [hoverRef, isHovered] = useHover();
+
   return (
     <Container>
       <MessageText>
         Edward, we will miss you so much! We have tried to capture your spirit and wisdom
         in The Ed Commandments to be our North Star. Good luck and stay in touch!
     </MessageText>
-      <ImageWrapper>
-        <Image src={sloth} />
-      </ImageWrapper>
-
+      <ImageOuterWrapper ref={hoverRef}>
+        <ImageInnerWrapper
+          animate={{
+            rotate: isHovered ? 90 : 0
+          }}
+        >
+          <Image src={sloth} />
+        </ImageInnerWrapper>
+      </ImageOuterWrapper>
     </Container>
 
   )

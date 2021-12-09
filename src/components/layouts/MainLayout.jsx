@@ -6,6 +6,7 @@ const OuterContainer = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  overflow-y: hidden;
 `
 
 const InnerContainer = styled.div`
