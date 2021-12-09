@@ -41,8 +41,9 @@ function Message() {
         Edward, we will miss you so much! We have tried to capture your spirit and wisdom
         in The Ed Commandments to be our North Star. Good luck and stay in touch!
     </MessageText>
-      <ImageOuterWrapper ref={hoverRef}>
+      <ImageOuterWrapper >
         <ImageInnerWrapper
+          ref={hoverRef}
           animate={{
             rotate: isHovered ? 90 : 0
           }}
