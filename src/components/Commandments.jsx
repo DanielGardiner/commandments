@@ -10,6 +10,10 @@ const Title = styled.h1`
 const CommandmentUl = styled(motion.div)`
   overflow-y: hidden;
 `
+const CommandSpacer = styled.span`
+  min-width: 30px;
+  display: inline-block;
+`;
 const CommandmentLi = styled(motion.div)`
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
@@ -27,9 +31,9 @@ export default function Commandments() {
 
   const commandments = [
     'Thou shalt not work past 17:30.',
-    'Thou shalt not deploy after 16:00 or on Friday.',
+    'Thou shalt not deploy after 16:00 or on Fridays.',
     'Thou shalt meme at least once a day.',
-    'Thou shalt play the deployment playlist for major deployment.',
+    'Thou shalt play the deployment playlist for major deployments.',
     'Thou shalt always make time for WOGA.',
     'Thou shalt always use dark theme.',
     'Thou shalt only eat cereal after sunset.',
@@ -80,7 +84,7 @@ export default function Commandments() {
         {commandments.map((item, i) => {
           return (
             <CommandmentLi variants={commandmentItemVariants}>
-              {i + 1}&nbsp; &nbsp;{item}
+              <CommandSpacer>{i + 1}</CommandSpacer>{item}
             </CommandmentLi>
           )
         })}

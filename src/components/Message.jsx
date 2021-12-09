@@ -31,7 +31,7 @@ function Message() {
     <Container>
       <MessageText>
         Edward, we will miss you so much! We have tried to capture your spirit and wisdom
-        in The Ed Commandments to be our North star. Good luck and stay in touch!
+        in The Ed Commandments to be our North Star. Good luck and stay in touch!
     </MessageText>
       <ImageWrapper>
         <Image src={sloth} />
